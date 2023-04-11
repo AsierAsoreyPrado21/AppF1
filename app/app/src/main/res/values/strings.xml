@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AppF1</string>
+    <string name="app_name">F1 Channel</string>
     <string name="title_activity_init">InitActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
