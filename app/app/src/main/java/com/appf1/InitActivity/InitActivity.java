@@ -15,6 +15,7 @@ import android.widget.VideoView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.appf1.R;
+import com.appf1.register.RegisterActivity;
 
 public class InitActivity extends AppCompatActivity implements View.OnClickListener {
     private Button login;
@@ -75,16 +76,16 @@ public class InitActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.login:
                 // se viajara al login de la app
-                //Intent intent = new Intent(this, LoginActivity.class);
-                //startActivity(intent);
-                //finish();
+               /* Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+                finish();*/
                 Toast.makeText(this,"Login", LENGTH_SHORT).show();
                 break;
             case R.id.register:
                 // se viajara al registro de la app
-                //Intent intent2 = new Intent(this, RegisterActivity.class);
-                //startActivity(intent2);
-                //finish();
+                Intent intent2 = new Intent(this, RegisterActivity.class);
+                startActivity(intent2);
+                finish();
                 Toast.makeText(this,"Register", LENGTH_SHORT).show();
                 break;
         }

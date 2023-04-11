@@ -2,8 +2,13 @@ package com.appf1.client;
 
 import android.content.Context;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
 
 public class RestClient {
 
@@ -26,4 +31,14 @@ public class RestClient {
         return singleton;
     }
     // Posteriores peticiones
+    public JsonObjectRequest RequestRegister(String endpoint, JSONObject jsonObject, Response.Listener response, Response.ErrorListener errorListener){
+        JsonObjectRequest request = new JsonObjectRequest(
+                Request.Method.POST,
+                this.BASE_REAL_URL + endpoint,
+                jsonObject,
+                response,
+                errorListener
+        );
+        return request;
+    }
 }
