@@ -42,4 +42,13 @@ public class RestClient {
                 listener, errorListener);
         return request;
     }
+    public JsonObjectRequest sendPostRestorePassword(String endpoint, JSONObject requestBody, Response.Listener<JSONObject> listener,
+                                                     @Nullable Response.ErrorListener errorListener) {
+        JsonObjectRequest request = new JsonObjectRequest(
+                Request.Method.POST,
+                this.BASE_REAL_URL + endpoint,
+                requestBody,
+                listener, errorListener);
+        return request;
+    }
 }

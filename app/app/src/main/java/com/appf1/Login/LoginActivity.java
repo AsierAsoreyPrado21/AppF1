@@ -55,9 +55,9 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Toast.makeText(context, "¿Olvidaste contraseña?", LENGTH_SHORT).show();
                 //nos mandara a una actividad nueva para restaurar la contraseña
-                //Intent intent = new Intent(context,Restaurar_contraseña.class);
-                //context.startActivity(intent);
-                Toast.makeText(context, "Restaurar contraseña",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(context,Restaurar_contrasena.class);
+                context.startActivity(intent);
+
             }
         });
         // Obtenemos las SharedPreferences
