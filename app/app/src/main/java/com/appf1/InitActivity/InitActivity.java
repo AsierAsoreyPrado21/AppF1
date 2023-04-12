@@ -14,6 +14,7 @@ import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.appf1.Login.LoginActivity;
 import com.appf1.R;
 
 public class InitActivity extends AppCompatActivity implements View.OnClickListener {
@@ -75,9 +76,9 @@ public class InitActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.login:
                 // se viajara al login de la app
-                //Intent intent = new Intent(this, LoginActivity.class);
-                //startActivity(intent);
-                //finish();
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+                finish();
                 Toast.makeText(this,"Login", LENGTH_SHORT).show();
                 break;
             case R.id.register:
