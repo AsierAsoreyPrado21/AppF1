@@ -2,6 +2,7 @@ package com.appf1.register;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -87,8 +88,20 @@ public class RegisterActivity extends AppCompatActivity {
     }
     //metodo que creará el registro
     private void registerUser() {
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("nombre", String.valueOf(username));
+        editor.putString("email", String.valueOf(email));
+        editor.putString("password", String.valueOf(password));
+        editor.apply();
 
-        JSONObject requestBody = new JSONObject();
+        // Mostrar un mensaje de confirmación
+        Toast.makeText(getApplicationContext(), "Usuario registrado correctamente", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(context, InitActivity.class);
+        startActivity(intent);
+
+        
+        /*JSONObject requestBody = new JSONObject();
         try{
             requestBody.put("name", username.getText().toString());
             requestBody.put("email", email.getText().toString());
@@ -120,7 +133,7 @@ public class RegisterActivity extends AppCompatActivity {
         };
 
         JsonObjectRequest request = RestClient.getInstance(context).RequestRegister("/v1/users", requestBody, listener, errorListener);
-        this.requestQueue.add(request);
+        this.requestQueue.add(request);*/
 
     }
 }
