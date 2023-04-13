@@ -2,6 +2,7 @@ package com.appf1.Login;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.appf1.InitActivity.InitActivity;
 import com.appf1.R;
 import com.appf1.client.RestClient;
 
@@ -41,7 +43,9 @@ public class Restaurar_contrasena extends AppCompatActivity {
         buttonSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sendRestoreEmail();
+                //sendRestoreEmail();
+                Intent intent = new Intent(context, InitActivity.class);
+                context.startActivity(intent);
             }
         });requestQueue= Volley.newRequestQueue(this);
 
