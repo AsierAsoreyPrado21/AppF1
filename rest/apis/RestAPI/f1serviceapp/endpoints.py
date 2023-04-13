@@ -3,7 +3,7 @@ import secrets
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-
+from django.views.decorators.csrf import csrf_exempt
 import bcrypt
 from django.http import JsonResponse
 
