@@ -27,7 +27,7 @@ def register(request):
     salted_and_hashed_password = bcrypt.hashpw(json_password.encode("utf8"),bcrypt.gensalt()).decode('utf8')
 
     try:
-        user_object = Usuarios(nick=json_username,email=json_email,password=salted_and_hashed_password,token=None)
+        user_object = Usuarios(name=json_username,email=json_email,password=salted_and_hashed_password,token=None)
         user_object.save()
     except IntegrityError:
         return JsonResponse({"error": "An user with that email already exists"}, status=409)

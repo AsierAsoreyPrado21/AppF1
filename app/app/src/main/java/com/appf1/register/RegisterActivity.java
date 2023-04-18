@@ -88,9 +88,10 @@ public class RegisterActivity extends AppCompatActivity {
     }
     //metodo que creará el registro
     private void registerUser() {
+        /*
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("nombre", String.valueOf(username));
+        editor.putString("name", String.valueOf(username));
         editor.putString("email", String.valueOf(email));
         editor.putString("password", String.valueOf(password));
         editor.apply();
@@ -99,9 +100,9 @@ public class RegisterActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "Usuario registrado correctamente", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(context, InitActivity.class);
         startActivity(intent);
-
+*/
         
-        /*JSONObject requestBody = new JSONObject();
+        JSONObject requestBody = new JSONObject();
         try{
             requestBody.put("name", username.getText().toString());
             requestBody.put("email", email.getText().toString());
@@ -116,7 +117,6 @@ public class RegisterActivity extends AppCompatActivity {
                 Toast.makeText(context, "Usuario registrado con éxito", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(context, InitActivity.class);
                 startActivity(intent);
-                finish();
             }
         };
 
@@ -132,8 +132,8 @@ public class RegisterActivity extends AppCompatActivity {
             }
         };
 
-        JsonObjectRequest request = RestClient.getInstance(context).RequestRegister("/v1/users", requestBody, listener, errorListener);
-        this.requestQueue.add(request);*/
+        JsonObjectRequest request = RestClient.getInstance(context).RequestRegister("/users", requestBody, listener, errorListener);
+        this.requestQueue.add(request);
 
     }
 }
