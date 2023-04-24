@@ -132,7 +132,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         };
 
-        JsonObjectRequest request = RestClient.getInstance(context).RequestRegister("/users", requestBody, listener, errorListener);
+        JsonObjectRequest request = RestClient.getInstance(context).RequestRegister("users", requestBody, listener, errorListener);
         this.requestQueue.add(request);
 
     }
