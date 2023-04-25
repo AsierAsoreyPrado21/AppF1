@@ -3,6 +3,7 @@ package com.appf1.NavDrawer;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -53,8 +54,7 @@ public class NavDrawerF1 extends AppCompatActivity implements NavigationView.OnN
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-
+        //cambiar el drawer_layout por el contenedor de cada fragmento
         switch(item.getItemId()){
             case R.id.nav_home:
                 drawerLayout.close();
@@ -85,10 +85,16 @@ public class NavDrawerF1 extends AppCompatActivity implements NavigationView.OnN
                 Fragment fragmentCalendario = new CalendarioFragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.drawer_layout, fragmentCalendario).commit();
                 break;
-            case R.id.nav_logout:
+            case R.id.nav_compras:
                 drawerLayout.close();
-                Intent intent = new Intent(this, InitActivity.class);
+                String url = "https://tickets.formula1.com/es";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                 startActivity(intent);
+                break;
+            case R.id.nav_salir:
+                drawerLayout.close();
+                Intent salir = new Intent(this, InitActivity.class);
+                startActivity(salir);
                 finish();
                 break;
         }
