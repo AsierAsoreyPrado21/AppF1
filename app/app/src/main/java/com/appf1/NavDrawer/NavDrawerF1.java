@@ -2,6 +2,7 @@ package com.appf1.NavDrawer;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,6 +17,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import com.appf1.InitActivity.InitActivity;
 import com.appf1.R;
 import com.google.android.material.navigation.NavigationView;
 
@@ -85,7 +87,9 @@ public class NavDrawerF1 extends AppCompatActivity implements NavigationView.OnN
                 break;
             case R.id.nav_logout:
                 drawerLayout.close();
-                Toast.makeText(context, "Salir", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(this, InitActivity.class);
+                startActivity(intent);
+                finish();
                 break;
         }
 
