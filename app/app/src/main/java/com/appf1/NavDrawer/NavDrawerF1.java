@@ -46,7 +46,10 @@ public class NavDrawerF1 extends AppCompatActivity implements NavigationView.OnN
         toggle.syncState();
         navigationView.setCheckedItem(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
+        // Cargar el fragmento inicial en el contenedor
+        /*getSupportFragmentManager().beginTransaction()
+                .replace(R.id.drawer_layout, new CalendarioFragment())
+                .commit();*/
     }
 
     @Override
