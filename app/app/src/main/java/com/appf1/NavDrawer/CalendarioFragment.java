@@ -14,8 +14,10 @@ import androidx.fragment.app.Fragment;
 import com.appf1.R;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
+import java.util.Random;
 
 public class CalendarioFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
@@ -27,6 +29,8 @@ public class CalendarioFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private CalendarView calendarView;
+    private ArrayList<Long> eventos = new ArrayList<Long>();
+
     public CalendarioFragment() {
         // Required empty public constructor
     }
@@ -64,6 +68,8 @@ public class CalendarioFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_calendario, container, false);
         calendarView = view.findViewById(R.id.calendarView);
 
+
+
         // Establecer listener para cuando se selecciona una fecha
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
@@ -72,22 +78,15 @@ public class CalendarioFragment extends Fragment {
                 Calendar calendar = Calendar.getInstance();
                 calendar.set(year, month, dayOfMonth);
 
-                // Establecer color de fondo para el día seleccionado
-                calendarView.setDateTextAppearance(calendar.getTimeInMillis(), R.style.CalendarioFragment_SelectedDate);
-
                 // Mostrar mensaje de fecha seleccionada
                 String selectedDate = dayOfMonth + "/" + (month + 1) + "/" + year;
                 Toast.makeText(getActivity(), "Fecha seleccionada: " + selectedDate, Toast.LENGTH_SHORT).show();
+
             }
         });
 
         return view;
     }
-    @Override
-    public void onResume() {
-        super.onResume();
 
-        // Quitar color de fondo de cualquier día que haya sido seleccionado previamente
-        calendarView.setDateTextAppearance(System.currentTimeMillis(), R.style.CalendarioFragment_NormalDate);
-    }
 }
+
