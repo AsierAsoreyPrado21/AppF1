@@ -33,8 +33,8 @@ public class PilotosFragment extends Fragment {
      * @return A new instance of fragment HomeFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static com.appf1.NavDrawer.HomeFragment newInstance(String param1, String param2) {
-        com.appf1.NavDrawer.HomeFragment fragment = new com.appf1.NavDrawer.HomeFragment();
+    public static PilotosFragment newInstance(String param1, String param2) {
+        PilotosFragment fragment = new PilotosFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -55,7 +55,7 @@ public class PilotosFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return inflater.inflate(R.layout.fragment_pilotos, container, false);
     }
 }
 
