@@ -35,6 +35,7 @@ public class NavDrawerF1 extends AppCompatActivity implements NavigationView.OnN
         drawerLayout=findViewById(R.id.drawer_layout);
         navigationView=findViewById(R.id.nav_view);
         toolbar=findViewById(R.id.toolbar_id);
+        //setSupportActionBar(toolbar);
 
         menu=navigationView.getMenu();
         navigationView.getHeaderView(0);
@@ -44,12 +45,12 @@ public class NavDrawerF1 extends AppCompatActivity implements NavigationView.OnN
         ActionBarDrawerToggle toggle= new ActionBarDrawerToggle( this, drawerLayout, toolbar, R.string.open,R.string.close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-        navigationView.setCheckedItem(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        // Cargar el fragmento inicial en el contenedor
-        /*getSupportFragmentManager().beginTransaction()
-                .replace(R.id.drawer_layout, new CalendarioFragment())
-                .commit();*/
+        navigationView.setCheckedItem(R.id.nav_home);
+
+        /*MenuItem menuItem = navigationView.getMenu().getItem(0);
+        onNavigationItemSelected(menuItem);
+        menuItem.setChecked(true);*/
     }
 
     @Override

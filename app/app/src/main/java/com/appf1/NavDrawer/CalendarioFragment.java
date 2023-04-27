@@ -178,7 +178,7 @@ public class CalendarioFragment extends Fragment {
 
         return view;
     }
-    //clase evento
+    //clase evento de los calendario
     public class Evento {
         private Calendar fecha;
         private String nombre;
