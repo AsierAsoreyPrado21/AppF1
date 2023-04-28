@@ -51,6 +51,12 @@ public class NavDrawerF1 extends AppCompatActivity implements NavigationView.OnN
         /*MenuItem menuItem = navigationView.getMenu().getItem(0);
         onNavigationItemSelected(menuItem);
         menuItem.setChecked(true);*/
+
+        // Establecer el fragmento Home como el fragmento seleccionado
+
+        Fragment fragmentPortada = new PortadaFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, fragmentPortada).commit();
+        navigationView.setCheckedItem(R.id.nav_home);
     }
 
     @Override

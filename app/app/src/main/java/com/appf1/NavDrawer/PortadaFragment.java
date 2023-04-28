@@ -5,13 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
 import com.appf1.R;
 
-public class PerfilFragment extends Fragment {
+public class PortadaFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -21,7 +20,7 @@ public class PerfilFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public PerfilFragment() {
+    public PortadaFragment() {
         // Required empty public constructor
     }
 
@@ -34,8 +33,8 @@ public class PerfilFragment extends Fragment {
      * @return A new instance of fragment HomeFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static PerfilFragment newInstance(String param1, String param2) {
-        PerfilFragment fragment = new PerfilFragment();
+    public static PortadaFragment newInstance(String param1, String param2) {
+        PortadaFragment fragment = new PortadaFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -52,25 +51,17 @@ public class PerfilFragment extends Fragment {
         }
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_perfil, container, false);
-        ImageView profileImage = view.findViewById(R.id.profile_image);
-        TextView usernameTextView = view.findViewById(R.id.username_textview);
-        TextView emailTextView = view.findViewById(R.id.email_edittext);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Inflar el diseño del fragmento
+        View view = inflater.inflate(R.layout.fragment_portada, container, false);
 
-        // Obtener la información del perfil de usuario
-        String username = "Nombre de usuario";
-        String email = "usuario@ejemplo.com";
+        // Obtener la referencia al ImageView del fondo
+        ImageView imagenFondo = view.findViewById(R.id.image_view);
 
-        // Establecer los valores de los componentes según la información del perfil de usuario
-        usernameTextView.setText(username);
-        emailTextView.setText(email);
-        // establecer la imagen de perfil del usuario en el ImageView
-        profileImage.setImageResource(R.drawable.logo);
+        // Establecer la imagen de fondo
+        imagenFondo.setImageResource(R.drawable.portada);
 
         return view;
     }
 }
+
