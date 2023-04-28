@@ -58,26 +58,26 @@ public class NavDrawerF1 extends AppCompatActivity implements NavigationView.OnN
         switch(item.getItemId()){
             case R.id.nav_home:
                 Fragment fragmentHome = new HomeFragment();
-                getSupportFragmentManager().beginTransaction().replace(R.id.drawer_layout, fragmentHome).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, fragmentHome).commit();
 
                 break;
             case R.id.nav_pilotos:
                 Fragment fragmentPilotos = new PilotosFragment();
-                getSupportFragmentManager().beginTransaction().replace(R.id.drawer_layout, fragmentPilotos).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, fragmentPilotos).commit();
                 break;
             case R.id.nav_equipos:
                 Fragment fragmentEquipos = new EquiposFragment();
-                getSupportFragmentManager().beginTransaction().replace(R.id.drawer_layout, fragmentEquipos).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, fragmentEquipos).commit();
 
                 break;
             case R.id.nav_perfil:
                 Fragment fragmentPerfil = new PerfilFragment();
-                getSupportFragmentManager().beginTransaction().replace(R.id.drawer_layout, fragmentPerfil).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, fragmentPerfil).commit();
 
                 break;
             case R.id.nav_calendario:
                 Fragment fragmentCalendario = new CalendarioFragment();
-                getSupportFragmentManager().beginTransaction().replace(R.id.drawer_layout, fragmentCalendario).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, fragmentCalendario).commit();
                 break;
             case R.id.nav_compras:
                 String url = "https://tickets.formula1.com/es";
