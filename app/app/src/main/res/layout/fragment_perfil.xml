@@ -2,6 +2,7 @@
 <LinearLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#000000"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <ImageView
         android:id="@+id/profile_image"
@@ -14,8 +15,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:textColor="@android:color/black"
+        android:textColor="#FFFFFF"
         android:text="Nombre de usuario"
+        android:textStyle="bold"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"/>
     <TextView
@@ -24,7 +26,47 @@
         android:layout_height="wrap_content"
         android:hint="Dirección de correo electrónico"
         android:inputType="textEmailAddress"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:layout_marginTop="16dp"
+        android:textStyle="bold"
         android:padding="16dp"/>
+    <Button
+        android:id="@+id/select_favorite_pilot_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#000000"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:text="Seleccionar piloto favorito" />
+
+    <Button
+        android:id="@+id/select_favorite_team_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#000000"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:text="Seleccionar equipo favorito" />
+    <TextView
+        android:id="@+id/fav_piloto_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/fav_equipo_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"
+        android:textStyle="bold"
+        />
+
 
 </LinearLayout>
