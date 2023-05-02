@@ -4,10 +4,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.appf1.R;
+import com.appf1.adaptadores.AdapterEquipo;
+import com.appf1.entidades.Equipo;
+
+import java.util.ArrayList;
 
 public class EquiposFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
@@ -49,11 +56,49 @@ public class EquiposFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+    AdapterEquipo adapterEquipo;
+    RecyclerView recyclerViewEquipo;
+    ArrayList<Equipo>listaEquipos;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_equipos, container, false);
+        View view = inflater.inflate(R.layout.fragment_equipos,container,false);
+
+        recyclerViewEquipo= view.findViewById(R.id.recycler_view);
+        listaEquipos=new ArrayList<>();
+        //cargar lista
+        cargarLista();
+        //mostrar datos
+        mostrarDatos();
+       return view;
+    }
+
+    private void mostrarDatos() {
+        recyclerViewEquipo.setLayoutManager(new LinearLayoutManager(getContext()));
+        adapterEquipo= new AdapterEquipo(getContext(),listaEquipos);
+        recyclerViewEquipo.setAdapter(adapterEquipo);
+
+        adapterEquipo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String nombre= listaEquipos.get(recyclerViewEquipo.getChildAdapterPosition(view)).getNombre();
+                Toast.makeText(getContext(),"Selecciono:"+nombre,Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    private void cargarLista() {
+        listaEquipos.add(new Equipo("Red Bull",R.drawable.redbull));
+        listaEquipos.add(new Equipo("Aston Martin",R.drawable.aston_martin));
+        listaEquipos.add(new Equipo("Mercedes",R.drawable.mercedes));
+        listaEquipos.add(new Equipo("Ferrari",R.drawable.ferrari));
+        listaEquipos.add(new Equipo("Mclaren",R.drawable.mclaren));
+        listaEquipos.add(new Equipo("Alpine",R.drawable.alpine));
+        listaEquipos.add(new Equipo("Hass",R.drawable.hass));
+        listaEquipos.add(new Equipo("Alfa Romeo",R.drawable.alfaromeo));
+        listaEquipos.add(new Equipo("Alphatauri",R.drawable.alphatauri));
+        listaEquipos.add(new Equipo("Williams",R.drawable.williams));
+
+
     }
 }
