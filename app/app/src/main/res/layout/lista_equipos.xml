@@ -13,26 +13,34 @@
         android:layout_width="match_parent"
         android:padding="10dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
+
+        >
         <ImageView
             android:id="@+id/imagenEquipo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/redbull"/>
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/redbull"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
         <TextView
             android:id="@+id/tituloEquipo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="Nombre del equipo"
             android:textSize="18dp"
-            android:layout_toRightOf="@+id/imagenEquipo"
-            android:layout_toEndOf="@id/imagenEquipo"
-            android:layout_marginLeft="60sp"
-            android:layout_marginStart="60sp"/>
+            android:layout_below="@+id/imagenEquipo"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/nacionEquipo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:layout_below="@+id/imagenEquipo"
+            android:layout_centerHorizontal="true"/>
 
-        
-        
+
+
     </RelativeLayout>
 
        

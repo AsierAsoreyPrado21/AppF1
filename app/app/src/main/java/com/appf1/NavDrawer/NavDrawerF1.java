@@ -14,12 +14,16 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
+import com.appf1.IComunicarFragment;
 import com.appf1.InitActivity.InitActivity;
 import com.appf1.R;
+import com.appf1.entidades.Equipo;
+import com.appf1.fragment.DetalleEquipoFragment;
 import com.google.android.material.navigation.NavigationView;
 
-public class NavDrawerF1 extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class NavDrawerF1 extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, IComunicarFragment {
 
     private Context context=this;
     private DrawerLayout drawerLayout;
@@ -27,6 +31,8 @@ public class NavDrawerF1 extends AppCompatActivity implements NavigationView.OnN
     private Toolbar toolbar;
     private Menu menu;
 
+    //variables detalleEquipo
+    DetalleEquipoFragment detalleEquipoFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,4 +117,15 @@ public class NavDrawerF1 extends AppCompatActivity implements NavigationView.OnN
         }
     }
 
+    @Override
+    public void enviarEquipo(Equipo equipo) {
+        detalleEquipoFragment= new DetalleEquipoFragment();
+        //objeto que transporta la info
+        Bundle bundleEnvio = new Bundle();
+        bundleEnvio.putSerializable("objeto",equipo);
+        detalleEquipoFragment.setArguments(bundleEnvio);
+        //abrir fragment
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, detalleEquipoFragment).addToBackStack(null).commit();
+
+    }
 }

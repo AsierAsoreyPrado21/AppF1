@@ -1,8 +1,19 @@
 package com.appf1.entidades;
 
-public class Equipo {
+import java.io.Serializable;
+
+public class Equipo implements Serializable {
     private String nombre;
     private int imagenId;
+    private String nacionalidad;
+
+    public String getNacionalidad() {
+        return nacionalidad;
+    }
+
+    public void setNacionalidad(String nacionalidad) {
+        this.nacionalidad = nacionalidad;
+    }
 
     public String getNombre() {
         return nombre;
@@ -23,8 +34,9 @@ public class Equipo {
     public Equipo() {
     }
 
-    public Equipo(String nombre, int imagenId) {
+    public Equipo(String nombre, int imagenId, String nacionalidad) {
         this.nombre = nombre;
         this.imagenId = imagenId;
+        this.nacionalidad=nacionalidad;
     }
 }

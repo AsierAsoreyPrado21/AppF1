@@ -41,8 +41,10 @@ public class AdapterEquipo extends RecyclerView.Adapter<AdapterEquipo.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         String nombre=model.get(position).getNombre();
         int imagen=model.get(position).getImagenId();
+        String nacionalidad=model.get(position).getNacionalidad();
         holder.nombre.setText(nombre);
         holder.imagen.setImageResource(imagen);
+        holder.nacionalidad.setText(nacionalidad);
     }
 
     @Override
@@ -61,10 +63,15 @@ public class AdapterEquipo extends RecyclerView.Adapter<AdapterEquipo.ViewHolder
 
         TextView nombre;
         ImageView imagen;
+        TextView nacionalidad;
         public ViewHolder(@NonNull View itemView){
             super(itemView);
             nombre=itemView.findViewById(R.id.tituloEquipo);
+            nombre.setVisibility(View.INVISIBLE);
             imagen=itemView.findViewById(R.id.imagenEquipo);
+            nacionalidad=itemView.findViewById(R.id.nacionEquipo);
+            nacionalidad.setVisibility(View.INVISIBLE);
+
         }
     }
 }
