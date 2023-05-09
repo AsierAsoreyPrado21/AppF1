@@ -1,11 +1,14 @@
 from django.http import JsonResponse
 from django.db import IntegrityError
+from.models import Usuarios
+from django.views.decorators.csrf import csrf_exempt
 import bcrypt
 import json
 def health(request):
     return JsonResponse({"status": "alive"}, status=200)
 
 ##Registro del los usuarios
+@csrf_exempt
 def register(request):
     if request.method != 'POST':
         return JsonResponse({'error': 'HTTP method not supported'}, status=405)
