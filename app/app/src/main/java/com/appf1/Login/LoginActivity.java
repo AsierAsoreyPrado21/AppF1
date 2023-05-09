@@ -84,6 +84,7 @@ public class LoginActivity extends AppCompatActivity {
                         editor.putString("VALID_TOKEN", receivedToken);
                         editor.putString("VALID_EMAIL",email);
                         editor.commit();
+                        Toast.makeText(context, "Bienvenido de nuevo a F1Channel",Toast.LENGTH_LONG).show();
                         //Intent intent = new Intent(context, NavDrawwerF1.class);
                         //startActivity(intent);
 
