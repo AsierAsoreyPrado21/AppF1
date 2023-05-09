@@ -21,4 +21,5 @@ from f1serviceapp import endpoints
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('health',endpoints.health),
+    path('users',endpoints.register),
 ]
