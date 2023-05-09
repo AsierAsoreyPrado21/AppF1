@@ -28,9 +28,6 @@
         <activity android:name=".Login.LoginActivity"
             android:exported="true" />
 
-        <activity android:name=".Login.Restaurar_contrasena"
-            android:exported="true" />
-
     </application>
 
 </manifest>

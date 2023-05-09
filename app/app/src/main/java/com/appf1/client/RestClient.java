@@ -14,7 +14,7 @@ import org.json.JSONObject;
 
 public class RestClient {
 
-    private String BASE_REAL_URL="https://ergast.com/api/f1";
+    private String BASE_REAL_URL="http://10.0.2.2:8000";
     private static Context context;
     private static RequestQueue queue;
 
@@ -32,7 +32,7 @@ public class RestClient {
         }
         return singleton;
     }
-    // Posteriores peticiones
+    // Login
     public JsonObjectRequest sendPostLogin(String endpoint, JSONObject requestBody, Response.Listener<JSONObject> listener,
                                            @Nullable Response.ErrorListener errorListener) {
         JsonObjectRequest request = new JsonObjectRequest(
@@ -42,13 +42,5 @@ public class RestClient {
                 listener, errorListener);
         return request;
     }
-    public JsonObjectRequest sendPostRestorePassword(String endpoint, JSONObject requestBody, Response.Listener<JSONObject> listener,
-                                                     @Nullable Response.ErrorListener errorListener) {
-        JsonObjectRequest request = new JsonObjectRequest(
-                Request.Method.POST,
-                this.BASE_REAL_URL + endpoint,
-                requestBody,
-                listener, errorListener);
-        return request;
-    }
+
 }
