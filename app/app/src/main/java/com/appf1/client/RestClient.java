@@ -12,8 +12,8 @@ import org.json.JSONObject;
 
 public class RestClient {
 
-    private String BASE_REAL_URL="https://ergast.com/api/f1";
-    private String Base="http://127.0.0.1:8000/";
+    private String Base="http://10.0.2.2:8000";
+
     private static Context context;
     private static RequestQueue queue;
 

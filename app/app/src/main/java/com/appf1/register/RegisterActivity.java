@@ -88,19 +88,6 @@ public class RegisterActivity extends AppCompatActivity {
     }
     //metodo que creará el registro
     private void registerUser() {
-        /*
-        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("name", String.valueOf(username));
-        editor.putString("email", String.valueOf(email));
-        editor.putString("password", String.valueOf(password));
-        editor.apply();
-
-        // Mostrar un mensaje de confirmación
-        Toast.makeText(getApplicationContext(), "Usuario registrado correctamente", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(context, InitActivity.class);
-        startActivity(intent);
-*/
         
         JSONObject requestBody = new JSONObject();
         try{
@@ -115,8 +102,6 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onResponse(JSONObject response){
                 Toast.makeText(context, "Usuario registrado con éxito", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(context, InitActivity.class);
-                startActivity(intent);
             }
         };
 
@@ -132,8 +117,16 @@ public class RegisterActivity extends AppCompatActivity {
             }
         };
 
-        JsonObjectRequest request = RestClient.getInstance(context).RequestRegister("users", requestBody, listener, errorListener);
+        JsonObjectRequest request = RestClient.getInstance(context).RequestRegister("/users", requestBody, listener, errorListener);
         this.requestQueue.add(request);
 
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(RegisterActivity.this, InitActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }
+
