@@ -20,7 +20,9 @@ import com.appf1.IComunicarFragment;
 import com.appf1.InitActivity.InitActivity;
 import com.appf1.R;
 import com.appf1.entidades.Equipo;
+import com.appf1.entidades.Piloto;
 import com.appf1.fragment.DetalleEquipoFragment;
+import com.appf1.fragment.DetallePilotoFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class NavDrawerF1 extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, IComunicarFragment {
@@ -33,6 +35,7 @@ public class NavDrawerF1 extends AppCompatActivity implements NavigationView.OnN
 
     //variables detalleEquipo
     DetalleEquipoFragment detalleEquipoFragment;
+    DetallePilotoFragment detallePilotoFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,4 +131,16 @@ public class NavDrawerF1 extends AppCompatActivity implements NavigationView.OnN
         getSupportFragmentManager().beginTransaction().replace(R.id.container, detalleEquipoFragment).addToBackStack(null).commit();
 
     }
+    @Override
+    public void enviarPiloto(Piloto piloto) {
+        detallePilotoFragment= new DetallePilotoFragment();
+        //objeto que transporta la info
+        Bundle bundleEnvio = new Bundle();
+        bundleEnvio.putSerializable("objeto",piloto);
+        detallePilotoFragment.setArguments(bundleEnvio);
+        //abrir fragment
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, detallePilotoFragment).addToBackStack(null).commit();
+
+    }
+
 }

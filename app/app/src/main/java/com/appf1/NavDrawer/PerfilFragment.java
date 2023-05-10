@@ -26,10 +26,6 @@ public class PerfilFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private TextView favPilotoTextView;
-    private TextView favEquipoTextView;
-    private String pilotoSeleccionado;
-    private String equipoSeleccionado;
 
     public PerfilFragment() {
         // Required empty public constructor
@@ -70,8 +66,6 @@ public class PerfilFragment extends Fragment {
         ImageView profileImage = view.findViewById(R.id.profile_image);
         TextView usernameTextView = view.findViewById(R.id.username_textview);
         TextView emailTextView = view.findViewById(R.id.email_edittext);
-        favPilotoTextView = view.findViewById(R.id.fav_piloto_textview);
-        favEquipoTextView = view.findViewById(R.id.fav_equipo_textview);
 
         // Obtener la información del perfil de usuario
         String username = "Nombre de usuario";
@@ -82,60 +76,6 @@ public class PerfilFragment extends Fragment {
         emailTextView.setText(email);
         // establecer la imagen de perfil del usuario en el ImageView
         profileImage.setImageResource(R.drawable.logo);
-        // Agregar OnClickListener para el botón de seleccionar piloto favorito
-        Button selectFavoritePilotButton = view.findViewById(R.id.select_favorite_pilot_button);
-        selectFavoritePilotButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Abrir una nueva actividad o fragmento para seleccionar el piloto favorito
-                /*Intent intent = new Intent(getActivity(), SelectFavoritePilotActivity.class);
-                startActivity(intent);*/
-                Toast.makeText(getActivity(), "Añadir piloto", Toast.LENGTH_LONG).show();
-            }
-        });
-
-        // Agregar OnClickListener para el botón de seleccionar equipo favorito
-        Button selectFavoriteTeamButton = view.findViewById(R.id.select_favorite_team_button);
-        selectFavoriteTeamButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Abrir una nueva actividad o fragmento para seleccionar el equipo favorito
-                /*Intent intent = new Intent(getActivity(), SelectFavoriteTeamActivity.class);
-                startActivity(intent);*/
-                Toast.makeText(getActivity(), "Añadir equipo", Toast.LENGTH_LONG).show();
-            }
-        });
-        // Función para guardar un valor en las SharedPreferences
-        /*private void saveStringToSharedPreferences() {
-            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString();
-            editor.apply();
-        }*/
-
-        // Función para obtener un valor de las SharedPreferences
-        /*private String getStringFromSharedPreferences() {
-            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-            return sharedPreferences.getString();
-        }*/
-        // Actualizar los TextView con los nombres de los equipos y pilotos seleccionados por el usuario
-        actualizarPreferencias();
-
-
         return view;
-    }
-    // Método para actualizar los TextView con los nombres de los equipos y pilotos seleccionados por el usuario
-    private void actualizarPreferencias() {
-        if (pilotoSeleccionado != null) {
-            favPilotoTextView.setText(pilotoSeleccionado);
-        } else {
-            favPilotoTextView.setText("Piloto favorito no seleccionado");
-        }
-
-        if (equipoSeleccionado != null) {
-            favEquipoTextView.setText(equipoSeleccionado);
-        } else {
-            favEquipoTextView.setText("Equipo favorito no seleccionado");
-        }
     }
 }

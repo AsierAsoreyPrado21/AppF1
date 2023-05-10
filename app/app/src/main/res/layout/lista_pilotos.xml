@@ -16,42 +16,60 @@
 
         >
         <ImageView
-            android:id="@+id/imagenEquipo"
+            android:id="@+id/imagenPiloto"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:src="@drawable/redbull"
+            android:src="@drawable/verstappen"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"/>
         <TextView
-            android:id="@+id/tituloEquipo"
+            android:id="@+id/tituloPiloto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:textSize="18dp"
-            android:layout_below="@+id/imagenEquipo"
+            android:text="Max"
+            android:layout_marginTop="80dp"
+            android:layout_below="@+id/imagenPiloto"
             android:layout_centerHorizontal="true"/>
         <TextView
-            android:id="@+id/nacionEquipo"
+            android:id="@+id/nacionPiloto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:textSize="18dp"
-            android:layout_below="@+id/imagenEquipo"
+            android:layout_below="@+id/imagenPiloto"
             android:layout_centerHorizontal="true"/>
         <TextView
-            android:id="@+id/titulosEquipo"
+            android:id="@+id/dorsalPiloto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:textSize="18dp"
-            android:layout_below="@+id/imagenEquipo"
+            android:layout_below="@+id/nacionPiloto"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/victoriasPiloto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:layout_below="@+id/dorsalPiloto"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/titulosPiloto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:layout_below="@+id/victoriasPiloto"
             android:layout_centerHorizontal="true"/>
 
 
 
     </RelativeLayout>
 
-       
+
 
 
 </androidx.cardview.widget.CardView>

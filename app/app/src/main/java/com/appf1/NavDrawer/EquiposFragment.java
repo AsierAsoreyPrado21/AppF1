@@ -1,5 +1,6 @@
 package com.appf1.NavDrawer;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -70,12 +71,13 @@ public class EquiposFragment extends Fragment {
 
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_equipos,container,false);
 
-        recyclerViewEquipo= view.findViewById(R.id.recycler_view);
+        recyclerViewEquipo= view.findViewById(R.id.recycler_viewEquipo);
         listaEquipos=new ArrayList<>();
         //cargar lista
         cargarLista();
@@ -93,25 +95,23 @@ public class EquiposFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String nombre= listaEquipos.get(recyclerViewEquipo.getChildAdapterPosition(view)).getNombre();
-                Toast.makeText(getContext(),"Selecciono:"+nombre,Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(),"Selecciono: "+nombre,Toast.LENGTH_LONG).show();
                 interfaceComunicarFragment.enviarEquipo(listaEquipos.get(recyclerViewEquipo.getChildAdapterPosition(view)));
             }
         });
     }
 
     private void cargarLista() {
-        listaEquipos.add(new Equipo("Red Bull",R.drawable.redbull,"Austria"));
-        listaEquipos.add(new Equipo("Aston Martin",R.drawable.aston_martin,"Reino Unido"));
-        listaEquipos.add(new Equipo("Mercedes",R.drawable.mercedes,"Alemania"));
-        listaEquipos.add(new Equipo("Ferrari",R.drawable.ferrari,"Italia"));
-        listaEquipos.add(new Equipo("Mclaren",R.drawable.mclaren,"Reino Unido"));
-        listaEquipos.add(new Equipo("Alpine",R.drawable.alpine,"Francia"));
-        listaEquipos.add(new Equipo("Hass",R.drawable.hass,"Estados Unidos"));
-        listaEquipos.add(new Equipo("Alfa Romeo",R.drawable.alfaromeo," Suiza"));
-        listaEquipos.add(new Equipo("Alphatauri",R.drawable.alphatauri,"Italia"));
-        listaEquipos.add(new Equipo("Williams",R.drawable.williams,"Reino Unido"));
-
-
+        listaEquipos.add(new Equipo("Red Bull",R.drawable.redbull,"austríaca",5));
+        listaEquipos.add(new Equipo("Aston Martin",R.drawable.aston_martin,"Británica",0));
+        listaEquipos.add(new Equipo("Mercedes",R.drawable.mercedes,"Alemana",8));
+        listaEquipos.add(new Equipo("Ferrari",R.drawable.ferrari,"Italiana",16));
+        listaEquipos.add(new Equipo("Mclaren",R.drawable.mclaren,"Británica",8));
+        listaEquipos.add(new Equipo("Alpine",R.drawable.alpine,"Francesa",2));
+        listaEquipos.add(new Equipo("Hass",R.drawable.hass,"Estadounidense",0));
+        listaEquipos.add(new Equipo("Alfa Romeo",R.drawable.alfaromeo," Suiza",0));
+        listaEquipos.add(new Equipo("Alphatauri",R.drawable.alphatauri,"Italiana",0));
+        listaEquipos.add(new Equipo("Williams",R.drawable.williams,"Británica",9));
     }
 
     @Override

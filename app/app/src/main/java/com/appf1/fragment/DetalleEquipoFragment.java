@@ -18,6 +18,7 @@ public class DetalleEquipoFragment extends Fragment {
     TextView nombreDetalle;
     ImageView imagenDetalle;
     TextView nacionDetalle;
+    TextView titulosDetalle;
 
     @Nullable
     @Override
@@ -28,6 +29,8 @@ public class DetalleEquipoFragment extends Fragment {
         nombreDetalle= view.findViewById(R.id.nombreDetalleEquipo);
         imagenDetalle=view.findViewById(R.id.imagenDetalleEquipo);
         nacionDetalle=view.findViewById(R.id.nacionDetalleEquipo);
+        titulosDetalle=view.findViewById(R.id.titulosDetalleEquipo);
+
         Bundle objetoEquipo = getArguments();
         Equipo equipo= null;
         if(objetoEquipo!=null){
@@ -35,6 +38,7 @@ public class DetalleEquipoFragment extends Fragment {
             nombreDetalle.setText(equipo.getNombre());
             imagenDetalle.setImageResource(equipo.getImagenId());
             nacionDetalle.setText(equipo.getNacionalidad());
+            titulosDetalle.setText(String.valueOf(equipo.getTitulos()));
         }
 
         return view;

@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:text="Detalle de la escuderia"
         android:textStyle="bold"
-        android:textSize="30dp"
+        android:textSize="20dp"
         android:textColor="@color/black"
         android:gravity="center"/>
     <ImageView
@@ -18,7 +18,7 @@
         android:layout_height="200dp"
         android:src="@drawable/redbull"
         android:layout_gravity="center"
-        android:paddingTop="50dp"/>
+        android:paddingTop="30dp"/>
     <TextView
         android:id="@+id/titulo_nombreDetalleEquipo"
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
         android:textColor="@color/black"
         android:textSize="20dp"
         android:gravity="center"
-        android:paddingTop="50dp"/>
+        android:paddingTop="30dp"/>
     <TextView
         android:id="@+id/nombreDetalleEquipo"
         android:layout_width="match_parent"
@@ -37,7 +37,7 @@
         android:textSize="20dp"
         android:textColor="@color/black"
         android:gravity="center"
-        android:paddingTop="50dp"/>
+        android:paddingTop="30dp"/>
 
     <TextView
         android:id="@+id/titulo_nacionDetalleEquipo"
@@ -48,7 +48,7 @@
         android:textSize="20dp"
         android:textColor="@color/black"
         android:gravity="center"
-        android:paddingTop="50dp"/>
+        android:paddingTop="30dp"/>
     <TextView
         android:id="@+id/nacionDetalleEquipo"
         android:layout_width="match_parent"
@@ -57,6 +57,25 @@
         android:textSize="20dp"
         android:textColor="@color/black"
         android:gravity="center"
-        android:paddingTop="50dp"/>
+        android:paddingTop="30dp"/>
+    <TextView
+        android:id="@+id/titulo_titulosDetalleEquipo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Campeonatos de contructores:"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:paddingTop="30dp"/>
+    <TextView
+        android:id="@+id/titulosDetalleEquipo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:paddingTop="30dp"/>
 
 </LinearLayout>
