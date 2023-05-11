@@ -54,7 +54,7 @@ public class NavDrawerF1 extends AppCompatActivity implements NavigationView.OnN
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setCheckedItem(R.id.nav_home);
+        navigationView.setCheckedItem(R.id.nav_resumen);
 
         /*MenuItem menuItem = navigationView.getMenu().getItem(0);
         onNavigationItemSelected(menuItem);
@@ -64,15 +64,15 @@ public class NavDrawerF1 extends AppCompatActivity implements NavigationView.OnN
 
         Fragment fragmentPortada = new PortadaFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragmentPortada).commit();
-        navigationView.setCheckedItem(R.id.nav_home);
+        navigationView.setCheckedItem(R.id.nav_resumen);
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
-            case R.id.nav_home:
-                Fragment fragmentHome = new HomeFragment();
-                getSupportFragmentManager().beginTransaction().replace(R.id.container, fragmentHome).commit();
+            case R.id.nav_resumen:
+                Fragment fragmentResumen = new ResumenFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, fragmentResumen).commit();
 
                 break;
             case R.id.nav_pilotos:
