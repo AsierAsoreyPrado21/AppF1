@@ -34,7 +34,6 @@
         android:id="@+id/nombreDetallePiloto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
         android:textSize="20dp"
         android:textColor="@color/black"
         android:gravity="center"
@@ -63,10 +62,10 @@
             android:layout_toEndOf="@id/titulo_nacionDetallePiloto"
             android:paddingTop="30dp"
             android:layout_marginLeft="50dp"
-            android:text="Holandesa"
+
             android:textColor="@color/black"
             android:textSize="20dp"
-            android:textStyle="bold" />
+            />
 
     </RelativeLayout>
 
@@ -93,10 +92,9 @@
             android:layout_toEndOf="@id/titulo_dorsalDetallePiloto"
             android:paddingTop="30dp"
             android:layout_marginLeft="50dp"
-            android:text="1"
             android:textColor="@color/black"
             android:textSize="20dp"
-            android:textStyle="bold" />
+             />
 
     </RelativeLayout>
     <RelativeLayout
@@ -122,10 +120,9 @@
             android:layout_toEndOf="@id/titulo_victoriasDetallePiloto"
             android:paddingTop="30dp"
             android:layout_marginLeft="50dp"
-            android:text="33"
             android:textColor="@color/black"
             android:textSize="20dp"
-            android:textStyle="bold" />
+             />
 
     </RelativeLayout>
     <RelativeLayout
@@ -151,11 +148,10 @@
             android:layout_toEndOf="@id/titulo_titulosDetallePiloto"
             android:paddingTop="30dp"
             android:layout_marginLeft="50dp"
-            android:text="2"
             android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textSize="20dp" />
 
     </RelativeLayout>
+
 
 </LinearLayout>

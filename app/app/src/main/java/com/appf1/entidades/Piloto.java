@@ -20,9 +20,6 @@ public class Piloto implements Serializable {
         this.titulos = titulos;
     }
 
-    public Piloto() {
-    }
-
     public String getNombre() {
         return nombre;
     }
@@ -69,5 +66,8 @@ public class Piloto implements Serializable {
 
     public void setTitulos(int titulos) {
         this.titulos = titulos;
+    }
+
+    public Piloto() {
     }
 }

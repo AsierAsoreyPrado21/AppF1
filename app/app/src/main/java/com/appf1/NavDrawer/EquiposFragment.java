@@ -102,7 +102,7 @@ public class EquiposFragment extends Fragment {
     }
 
     private void cargarLista() {
-        listaEquipos.add(new Equipo("Red Bull",R.drawable.redbull,"austríaca",5));
+        listaEquipos.add(new Equipo("Red Bull",R.drawable.redbull,"Austríaca",5));
         listaEquipos.add(new Equipo("Aston Martin",R.drawable.aston_martin,"Británica",0));
         listaEquipos.add(new Equipo("Mercedes",R.drawable.mercedes,"Alemana",8));
         listaEquipos.add(new Equipo("Ferrari",R.drawable.ferrari,"Italiana",16));

@@ -18,9 +18,9 @@
             android:icon="@drawable/ic_car"
             android:title="Equipos" />
         <item
-            android:id="@+id/nav_perfil"
-            android:icon="@drawable/ic_group"
-            android:title="Perfil" />
+            android:id="@+id/nav_clasificacion"
+            android:icon="@drawable/ic_clasificacion"
+            android:title="Clasificación" />
         <item
             android:id="@+id/nav_calendario"
             android:icon="@drawable/ic_calendar"
@@ -28,7 +28,7 @@
         <item
             android:id="@+id/nav_compras"
             android:icon="@drawable/ic_shopping"
-            android:title="Comprar tickets"/>
+            android:title="Compra ya tus tickets"/>
         <item
             android:id="@+id/nav_salir"
             android:icon="@drawable/ic_logout"

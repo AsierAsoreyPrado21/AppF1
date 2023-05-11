@@ -14,7 +14,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import com.appf1.IComunicarFragment;
 import com.appf1.InitActivity.InitActivity;
@@ -85,9 +84,9 @@ public class NavDrawerF1 extends AppCompatActivity implements NavigationView.OnN
                 getSupportFragmentManager().beginTransaction().replace(R.id.container, fragmentEquipos).commit();
 
                 break;
-            case R.id.nav_perfil:
-                Fragment fragmentPerfil = new PerfilFragment();
-                getSupportFragmentManager().beginTransaction().replace(R.id.container, fragmentPerfil).commit();
+            case R.id.nav_clasificacion:
+                Fragment fragmentClasificacion = new ClasificacionFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, fragmentClasificacion).commit();
 
                 break;
             case R.id.nav_calendario:
