@@ -2,10 +2,12 @@ package com.appf1.NavDrawer;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -99,8 +101,16 @@ public class NavDrawerF1 extends AppCompatActivity implements NavigationView.OnN
                 startActivity(intent);
                 break;
             case R.id.nav_salir:
-                Intent salir = new Intent(this, InitActivity.class);
-                startActivity(salir);
+                // Eliminar los datos de sesión guardados
+                SharedPreferences preferences = getSharedPreferences("nombre_de_tus_preferencias", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.clear();
+                editor.apply();
+                // Iniciar la actividad InitActivity
+                Intent close = new Intent(this, InitActivity.class);
+                startActivity(close);
+                Toast.makeText(this, "Gracias por usar nuestra aplicación", Toast.LENGTH_SHORT).show();
+                // Cerrar la actividad actual
                 finish();
                 break;
         }
