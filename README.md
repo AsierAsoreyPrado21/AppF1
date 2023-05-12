@@ -3,7 +3,7 @@
     <img src="https://github.com/AsierAsoreyPrado21/AppF1/assets/113420234/b2de3ca1-4dcd-4b80-a045-b2a1e25d6e66">
   </p>
   <p align="center">
-    <img src="https://img.shields.io/badge/STATUS-DESARROLLADO-green">
+    <img src="https://img.shields.io/badge/STATUS-EN DESARROLLO-green">
   </p>
   <h4 align="center">F1 Channel es un proyecto para conocer más acerca de la F1</h4>
 </center>
