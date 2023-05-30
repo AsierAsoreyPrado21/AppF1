@@ -31,6 +31,8 @@ public class ClasificacionFragment extends Fragment {
     private class ObtenerPilotosTask extends AsyncTask<Void, Void, String> {
 
         private static final String URL = "https://ergast.com/api/f1/current/driverStandings.json";
+        private static final String URL2 = "https://6475aeb6e607ba4797dc54bd.mockapi.io/F1Channel/clasificacion";
+
 
         @Override
         protected String doInBackground(Void... voids) {
@@ -38,13 +40,13 @@ public class ClasificacionFragment extends Fragment {
             try {
                 OkHttpClient client = new OkHttpClient();
                 Request request = new Request.Builder()
-                        .url(URL)
+                        .url(URL2)
                         .build();
 
                 Response response = client.newCall(request).execute();
                 String json = response.body().string();
 
-                JSONObject jsonObject = new JSONObject(json);
+                /*JSONObject jsonObject = new JSONObject(json);
                 JSONArray array = jsonObject.getJSONObject("MRData").getJSONObject("StandingsTable")
                         .getJSONArray("StandingsLists").getJSONObject(0).getJSONArray("DriverStandings");
 
@@ -52,7 +54,14 @@ public class ClasificacionFragment extends Fragment {
                     JSONObject piloto = array.getJSONObject(i).getJSONObject("Driver");
                     String nombre = piloto.getString("givenName") + " " + piloto.getString("familyName");
                     int posicion = array.getJSONObject(i).getInt("position");
-                    int puntos = array.getJSONObject(i).getInt("points");
+                    int puntos = array.getJSONObject(i).getInt("points");*/
+                JSONArray array = new JSONArray(json);
+
+                for (int i = 0; i < array.length(); i++) {
+                    JSONObject piloto = array.getJSONObject(i);
+                    String nombre = piloto.getString("nombre");
+                    int posicion = piloto.getInt("posicion");
+                    int puntos = piloto.getInt("puntos");
 
                     clasificacion += posicion + ". " + nombre + " - " + puntos + " puntos\n";
                 }
