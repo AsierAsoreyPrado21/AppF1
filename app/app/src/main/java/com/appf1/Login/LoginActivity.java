@@ -23,6 +23,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.appf1.InitActivity.InitActivity;
+import com.appf1.NavDrawer.NavDrawerF1;
 import com.appf1.R;
 import com.appf1.client.RestClient;
 
@@ -85,8 +86,8 @@ public class LoginActivity extends AppCompatActivity {
                         editor.putString("VALID_EMAIL",email);
                         editor.commit();
                         Toast.makeText(context, "Bienvenido de nuevo a F1Channel",Toast.LENGTH_LONG).show();
-                        //Intent intent = new Intent(context, NavDrawwerF1.class);
-                        //startActivity(intent);
+                        Intent intent = new Intent(context, NavDrawerF1.class);
+                        startActivity(intent);
 
                     }
                 };
