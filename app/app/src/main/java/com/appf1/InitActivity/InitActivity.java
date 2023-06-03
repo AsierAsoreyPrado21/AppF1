@@ -80,15 +80,12 @@ public class InitActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent = new Intent(this, LoginActivity.class);
                 startActivity(intent);
                 finish();
-
-                Toast.makeText(this,"Login", LENGTH_SHORT).show();
                 break;
             case R.id.register:
                 // se viajara al registro de la app
                 Intent intent2 = new Intent(this, RegisterActivity.class);
                 startActivity(intent2);
                 finish();
-                Toast.makeText(this,"Register", LENGTH_SHORT).show();
                 break;
         }
     }
