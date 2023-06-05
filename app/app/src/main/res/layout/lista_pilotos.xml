@@ -17,8 +17,8 @@
         >
         <ImageView
             android:id="@+id/imagenPiloto"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
             android:src="@drawable/verstappen"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"/>
