@@ -1,19 +1,13 @@
 package com.appf1.InitActivity;
 
-import static android.widget.Toast.LENGTH_SHORT;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 import android.widget.VideoView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.appf1.Login.LoginActivity;
 import com.appf1.R;
 import com.appf1.register.RegisterActivity;
