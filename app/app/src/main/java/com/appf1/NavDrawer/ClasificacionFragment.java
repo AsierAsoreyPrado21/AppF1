@@ -40,13 +40,13 @@ public class ClasificacionFragment extends Fragment {
             try {
                 OkHttpClient client = new OkHttpClient();
                 Request request = new Request.Builder()
-                        .url(URL2)
+                        .url(URL)
                         .build();
 
                 Response response = client.newCall(request).execute();
                 String json = response.body().string();
 
-                /*JSONObject jsonObject = new JSONObject(json);
+                JSONObject jsonObject = new JSONObject(json);
                 JSONArray array = jsonObject.getJSONObject("MRData").getJSONObject("StandingsTable")
                         .getJSONArray("StandingsLists").getJSONObject(0).getJSONArray("DriverStandings");
 
@@ -54,19 +54,35 @@ public class ClasificacionFragment extends Fragment {
                     JSONObject piloto = array.getJSONObject(i).getJSONObject("Driver");
                     String nombre = piloto.getString("givenName") + " " + piloto.getString("familyName");
                     int posicion = array.getJSONObject(i).getInt("position");
-                    int puntos = array.getJSONObject(i).getInt("points");*/
-                JSONArray array = new JSONArray(json);
-
-                for (int i = 0; i < array.length(); i++) {
-                    JSONObject piloto = array.getJSONObject(i);
-                    String nombre = piloto.getString("nombre");
-                    int posicion = piloto.getInt("posicion");
-                    int puntos = piloto.getInt("puntos");
+                    int puntos = array.getJSONObject(i).getInt("points");
 
                     clasificacion += posicion + ". " + nombre + " - " + puntos + " puntos\n";
                 }
             } catch (IOException | JSONException e) {
-                e.printStackTrace();
+                // Si se produce una excepción al cargar la primera URL,
+                // intenta cargar la segunda URL
+                try {
+                    OkHttpClient client = new OkHttpClient();
+                    Request request = new Request.Builder()
+                            .url(URL2)
+                            .build();
+
+                    Response response = client.newCall(request).execute();
+                    String json = response.body().string();
+
+                    JSONArray array = new JSONArray(json);
+
+                    for (int i = 0; i < array.length(); i++) {
+                        JSONObject piloto = array.getJSONObject(i);
+                        String nombre = piloto.getString("nombre");
+                        int posicion = piloto.getInt("posicion");
+                        int puntos = piloto.getInt("puntos");
+
+                        clasificacion += posicion + ". " + nombre + " - " + puntos + " puntos\n";
+                    }
+                } catch (IOException | JSONException ex) {
+                    ex.printStackTrace();
+                }
             }
             return clasificacion;
         }
