@@ -43,7 +43,8 @@ public class RestClient {
     }
 
     // Posteriores peticiones
-    public JsonObjectRequest RequestRegister(String endpoint, JSONObject jsonObject, Response.Listener response, Response.ErrorListener errorListener){
+    public JsonObjectRequest RequestRegister(String endpoint, JSONObject jsonObject, Response.Listener response,
+                                             Response.ErrorListener errorListener){
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
                 this.Base + endpoint,

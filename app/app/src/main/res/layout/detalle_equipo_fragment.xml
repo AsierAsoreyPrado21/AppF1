@@ -14,11 +14,12 @@
         android:gravity="center"/>
     <ImageView
         android:id="@+id/imagenDetalleEquipo"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
+        android:layout_width="220dp"
+        android:layout_height="150dp"
         android:src="@drawable/redbull"
         android:layout_gravity="center"
-        android:paddingTop="30dp"/>
+        android:scaleType="centerCrop"
+        android:layout_marginTop="30dp"/>
     <TextView
         android:id="@+id/titulo_nombreDetalleEquipo"
         android:layout_width="match_parent"
