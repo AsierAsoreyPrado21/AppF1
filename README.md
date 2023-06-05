@@ -39,4 +39,4 @@ Se planea mejorar la visualización del calendario, incluyendo nuevas opciones c
 Se planea incluir más detalles y estadísticas en los resúmenes de las carreras, así como también implementar la posibilidad de ver repeticiones y highlights de los momentos más emocionantes.
 
 ## Implementación renovada del perfil de usuario
-Se planea crear un perfil de usuario más completo y personalizable, que incluya opciones como la selección de pilotos y equipos favoritos, la posibilidad de guardar y compartir resúmenes y estadísticas, y una interfaz de usuario más intuitiva y moderna.
+Se planea crear un perfil de usuario  y personalizable, que incluya opciones como la selección de pilotos y equipos favoritos, la posibilidad de guardar y compartir resúmenes y estadísticas, y una interfaz de usuario más intuitiva y moderna.
