@@ -25,45 +25,10 @@ import java.util.ArrayList;
 
 public class PilotosFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
     public PilotosFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment HomeFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static PilotosFragment newInstance(String param1, String param2) {
-        PilotosFragment fragment = new PilotosFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
     //variables
     AdapterPiloto adapterPiloto;
     RecyclerView recyclerViewPiloto;
@@ -104,7 +69,7 @@ public class PilotosFragment extends Fragment {
     }
 
     private void cargarLista() {
-        listaPilotos.add(new Piloto("Max Verstappen",R.drawable.verstappen,"Holandesa",1,38,2));
+        listaPilotos.add(new Piloto("Max Verstappen",R.drawable.verstappen,"Holandesa",1,40,2));
         listaPilotos.add(new Piloto("Sergio Pérez",R.drawable.checo,"Mexicana",11,6,0));
         listaPilotos.add(new Piloto("Charles Leclerc",R.drawable.leclerc,"Monegasca",16,5,0));
         listaPilotos.add(new Piloto("Carlos Sainz",R.drawable.sainz,"Española",55,1,0));
